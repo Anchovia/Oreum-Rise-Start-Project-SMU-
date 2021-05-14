@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".MainActivity">
+
+    // 상단 바 부분
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:orientation="horizontal">
+
+        <TextView
+            android:fontFamily="@font/scdream_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="앱 설정"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    // 하단 부분
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        // 설정 체크박스
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--
+            [추가 필요 내용]
+            1. 알림 끄기
+            2. 다크 모드
+            3. 개선방향 보내기
+            -->
+            <CheckBox
+                android:id="@+id/Checkbox_notification"
+                android:fontFamily="@font/scdream_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="앱 알림 켜기"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <CheckBox
+                android:id="@+id/Checkbox_darkMode"
+                android:fontFamily="@font/scdream_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다크 모드 켜기"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        // 로그아웃 버튼
+        <Button
+            android:fontFamily="@font/scdream_regular"
+            android:id="@+id/button_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그아웃 하기"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#00FFFFFF"/>
+
+        // 업데이트 버전 텍스트
+        <TextView
+            android:fontFamily="@font/scdream_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="업데이트 버전 1.0.0"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

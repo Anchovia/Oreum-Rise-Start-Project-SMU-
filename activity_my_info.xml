@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyInfoActivity">
+
+    // 상단 바
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        // 상단 바 버튼, 텍스트 코드 전문
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            // 상단 바 왼쪽 버튼
+            <ImageButton
+                android:id="@+id/button_gotoMyInfo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_person_24"
+                android:background="#00FFFFFF"
+                android:tint="@color/black"/>
+
+            // 상단 바 중간 텍스트
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/scdream_regular"
+                android:text="프로필"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+
+            // 상단 바 오른쪽 버튼
+            <ImageButton
+                android:id="@+id/button_gotoSetting"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_settings_24"
+                android:background="#00FFFFFF"
+                android:tint="@color/black"/>
+
+        </LinearLayout>
+
+        // 상단 바 라인
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/black"/>
+
+    </LinearLayout>
+
+    // 정보 레이아웃
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        //사진+수정 레이아웃
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            //프로필 사진
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="100dp"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/ImageView_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_launcher"/>
+
+            </androidx.cardview.widget.CardView>
+
+            //프로필 수정 버튼
+            <Button
+                android:layout_marginLeft="1.5dp"
+                android:id="@+id/button_gotoMyInfoSetting"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:text="프로필 수정"
+                android:fontFamily="@font/scdream_regular"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="13dp"
+                android:textColor="@color/black"
+                app:backgroundTint="#00FFFFFF"/>
+
+        </LinearLayout>
+        //이름+지역 레이아웃
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+
+
+
+
+            //이름
+            <TextView
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:id="@+id/TextView_profileName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="yourName"
+                android:fontFamily="@font/scdream_regular"
+                android:textSize="40sp"
+                android:layout_marginBottom="5dp"/>
+
+            //지역
+            <TextView
+                android:textColor="@color/gray"
+                android:id="@+id/TextView_profileAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/scdream_regular"
+                android:text="Location"
+                android:textSize="30sp"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    // 구분선
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        // 작성 게시물
+        <TextView
+            android:textColor="@color/gray"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[작성 게시물]"
+            android:fontFamily="@font/scdream_regular"
+            android:textSize="20sp"/>
+
+        // 그리드뷰
+        <GridView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridView"
+            android:numColumns="2"/>
+
+    </LinearLayout>
+
+    // 하단 바 고정 레이아웃
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+    // 하단 바 라인
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    // 하단 바 홈 버튼
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageButton
+            android:id="@+id/Button_gotoHome"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_home_24"
+            android:background="#00FFFFFF"
+            android:tint="@color/black"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

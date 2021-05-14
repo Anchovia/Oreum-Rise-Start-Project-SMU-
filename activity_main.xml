@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    // 상단 바
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        // 상단 바 버튼, 텍스트 코드 전문
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            // 상단 바 왼쪽 버튼
+            <ImageButton
+                android:id="@+id/button_gotoMyInfo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_person_24"
+                android:background="#00FFFFFF"
+                android:tint="@color/black"/>
+
+            // 상단 바 중간 텍스트
+            <TextView
+                android:fontFamily="@font/scdream_regular"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="요즘.장소"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+
+            // 상단 바 오른쪽 버튼
+
+            <ImageButton
+                android:id="@+id/button_gotoSetting"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/ic_baseline_settings_24"
+                android:tint="@color/black" />
+
+        </LinearLayout>
+
+        // 상단 바 라인
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/black" />
+
+
+    </LinearLayout>
+
+    // 중간 스크롤 뷰
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            // 카카오맵 카드 리니어 레이아웃
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                // 카드뷰
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="5dp">
+
+                    // 카드뷰 내부 리니어 레이아웃
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/map_view"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            // 아이콘/텍스트 카드 리니어 레이아웃
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-20dp">
+
+                // 카드뷰
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="5dp">
+
+                    // 카드뷰 내부 리니어 레이아웃
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        // 내부 이미지 버튼 리니어 레이아웃
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            // 핫 게시판 이동 버튼
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:layout_weight="1">
+
+                                    <ImageButton
+                                        android:id="@+id/Button_gotoHotBoard"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:src="@drawable/ic_baseline_whatshot_24"
+                                        android:background="#00FFFFFF"
+                                        android:tint="@color/black"/>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            // 공유 게시판 이동 버튼
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:layout_weight="1">
+
+                                    <ImageButton
+                                        android:id="@+id/Button_gotoShareBoard"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:src="@drawable/ic_baseline_share_location_24"
+                                        android:background="#00FFFFFF"
+                                        android:tint="@color/black"/>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        // 내부 텍스트 리니어 레이아웃
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            // 핫 게시판 텍스트
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:fontFamily="@font/scdream_regular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:text="HOT 게시판"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold"
+                                        android:layout_marginBottom="5dp"/>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            // 공유 게시판 텍스트
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:fontFamily="@font/scdream_regular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textSize="14sp"
+                                        android:text="공유 게시판"
+                                        android:textColor="@color/black"
+                                        android:layout_marginBottom="5dp"/>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            // 이 달의 추천 지역 텍스트
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:fontFamily="@font/scdream_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="이 달의 추천 지역"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            // 이 달의 추천 지역 1
+            <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        // 이 달의 추천 지역 1 이미지
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/damyang"
+                                android:layout_weight="1"
+                                />
+
+                        </LinearLayout>
+
+                        // 이 달의 추천 지역 1 텍스트
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:fontFamily="@font/scdream_regular"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="전라남도, 담양"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="16sp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/gray"/>
+
+                            <TextView
+                                android:textColor="@color/gray"
+                                android:fontFamily="@font/scdream_regular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="힐링 여행지, 비대면 여행지로 요즘 인기가 많은 담양. 메타세쿼이아 길, 관방제림, 죽녹원, 소쇄원 등 눈과 몸이 힐링되는 슬로우 관광명소가 많아, 부모님을 모시고 어버이날 가족여행을 하기에도 안성맞춤!"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            // 이 달의 추천 지역 2
+            <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        // 이 달의 추천 지역 2 이미지
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/yangyang"
+                                android:layout_weight="1"
+                                />
+
+                        </LinearLayout>
+
+                        // 이 달의 추천 지역 2 텍스트
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:fontFamily="@font/scdream_regular"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="강원도, 양양"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="16sp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/gray"/>
+
+                            <TextView
+                                android:textColor="@color/gray"
+                                android:fontFamily="@font/scdream_regular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="해돋이 여행, 바다나 산으로 홀로 떠나는 혼행, 서핑 여행 등 한적하게 여유로운 여행을 떠나기 좋은 여행지이다. 특히, 양양에는 바다를 끼고 있는 리조트들이 있어 아이들과 함께 떠나는 가족 여행지로도 최고!"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            // 이 달의 추천 지역 3
+            <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        // 이 달의 추천 지역 3 이미지
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/buann"
+                                android:layout_weight="1"
+                                />
+
+                        </LinearLayout>
+
+                        // 이 달의 추천 지역 3 이미지
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:fontFamily="@font/scdream_regular"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="전라북도, 부안"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="16sp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/gray"/>
+
+                            <TextView
+                                android:textColor="@color/gray"
+                                android:fontFamily="@font/scdream_regular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="낙지젓, 밴댕이젓갈 등 각종 젓갈의 고향인 부안. 젓갈이 유명하기에 젓갈 백반 정식은 부안에서 꼭 맛봐야 하는 음식 중 하나이다. 또, 바지락으로 만든 요리도 유명! 바지락죽과 바지락 회무침도 먹어보자."/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            // 이 달의 추천 지역 4
+            <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        // 이 달의 추천 지역 4 이미지
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/buyeo"
+                                android:layout_weight="1"
+                                />
+
+                        </LinearLayout>
+
+                        // 이 달의 추천 지역 4 텍스트
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/scdream_regular"
+                                android:text="충청남도, 부여"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/gray"/>
+
+                            <TextView
+                                android:textColor="@color/gray"
+                                android:fontFamily="@font/scdream_regular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="백제의 수도였던 충남, 부여. 역사적/문화적 관광명소가 많아 아이들과 함께 역사 여행을 떠나기 좋은 어린이날 여행지로 제격이다."/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
